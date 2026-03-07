@@ -1,0 +1,12 @@
+{
+  "name": "dev-confessions",
+  "version": "1.0.0",
+  "description": "Deliberately messy starter codebase for refactoring exercise",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
