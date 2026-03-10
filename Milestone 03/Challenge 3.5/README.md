@@ -2,6 +2,89 @@
 
 Welcome Developer 👋
 
+## 🔒 Contribution Rules (Important)
+
+To protect the original repository from accidental changes, **direct modifications are not allowed**.
+
+All learners must follow the **Fork → Work → Pull Request workflow**.
+
+---
+
+### Step 1 — Fork the Repository
+
+Click the **Fork** button on the top right of this repository.
+
+This will create **your own copy of the project in your GitHub account**.
+
+You will work inside **your forked repository**, not this original one.
+
+---
+
+### Step 2 — Clone Your Fork
+
+Clone **your fork**, not the original repository.
+
+Example:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/repository-name.git
+```
+
+Move into the project folder:
+
+```bash
+cd repository-name
+```
+
+---
+
+### Step 3 — Work in Your Own Repository
+
+Make the required changes in your fork:
+
+- Fix the schema  
+- Create `normalized_schema.sql`  
+- Update `product_queries.sql`  
+- Add screenshots  
+
+Commit your changes in your forked repository.
+
+---
+
+### Step 4 — Push Changes
+
+Push your work to **your own GitHub repository**.
+
+```bash
+git add .
+git commit -m "Completed database normalization challenge"
+git push origin main
+```
+
+---
+
+### Step 5 — Submit a Pull Request
+
+Once your work is complete:
+
+1. Go to **your forked repository**
+2. Click **New Pull Request**
+3. Submit the request to the **original repository**
+
+Your work will then be **reviewed before being merged**.
+
+---
+
+## ⚠️ Important
+
+- **Do NOT clone and push directly to the original repository**
+- **Do NOT commit directly to the main repository**
+- **All work must happen inside your fork**
+
+This ensures the **original codebase remains unchanged and stable**.
+
+### To the Challenge
+
 In this challenge, you will act as a **database engineer** fixing a poorly designed schema.
 
 The current database works, but it violates several **normalization rules**, which leads to:
@@ -75,10 +158,8 @@ Your tasks:
 - create new tables where needed
 - define primary and foreign keys
 
-You may either:
+You must:
 
-- modify this file directly  
-or  
 - create a new file named:
 
 
