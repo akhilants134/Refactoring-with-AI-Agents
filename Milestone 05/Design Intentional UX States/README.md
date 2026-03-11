@@ -63,16 +63,6 @@ export const SIMULATE = 'success'  // ← change this
 2. **GitHub Pull Request** with your changes
 3. **Video walkthrough** 
 
-## Evaluation Criteria
-
-| Criterion | Marks | What's Checked |
-|-----------|-------|---------------|
-| State Coverage | 3 | All 4 states (loading, success, empty, error) implemented |
-| UX Clarity | 3 | User always understands what's happening; states are meaningful |
-| Component Structure | 2 | Conditional rendering is clean and logically organized |
-| Visual Proof | 2 | Screenshots show all 4 states clearly |
-| **Total** | **10** | |
-
 ## Hint
 
 - The `loading`, `error`, and `orders` variables are already wired up in state — you just need to use them
