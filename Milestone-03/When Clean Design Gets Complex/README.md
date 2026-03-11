@@ -106,34 +106,6 @@ Update the queries so they work with your normalized schema.
 
 ---
 
-# How To Approach This Challenge
-
-Step 1  
-Read the schema carefully.
-
-Step 2  
-Identify violations of normalization such as:
-
-- multi-valued attributes
-- repeated groups
-- attributes depending on other attributes
-
-Step 3  
-Break complex fields into **separate tables**.
-
-Step 4  
-Create proper **relationships using foreign keys**.
-
-Step 5  
-Run the queries again and update them if necessary.
-
-Step 6  
-Reflect on the trade-offs:
-
-Did normalization make queries more complex?
-
----
-
 # Expected Output
 
 You should produce:
@@ -200,6 +172,8 @@ Your work will be evaluated based on:
 - understanding of design trade-offs
 
 ---
+
+Good luck! 🚀
 
 ## 🔒 Contribution Rules (Important)
 
@@ -281,5 +255,3 @@ Your work will then be **reviewed before being merged**.
 - **All work must happen inside your fork**
 
 This ensures the **original codebase remains unchanged and stable**.
-
-Good luck! 🚀
