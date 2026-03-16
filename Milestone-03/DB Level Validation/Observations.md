@@ -22,4 +22,4 @@ Example:
 
 ## Result
 
-Explain how the database now prevents invalid data.
+Explain how the database now prevents invalid data as the final input.
