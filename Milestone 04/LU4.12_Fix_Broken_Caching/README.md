@@ -1,6 +1,5 @@
-# Student Side-Hustle Platform (Broken Starter)
+# Student Side-Hustle Platform 
 
-Notice: This repository is **INTENTIONALLY BROKEN**.
 
 This platform allows students to post and browse small tasks. Due to performance needs, an in-memory caching layer was added, but the implementation is unreliable.
 
