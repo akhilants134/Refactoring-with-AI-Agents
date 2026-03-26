@@ -1,79 +1,81 @@
-# Challenge: Good Prompt, Bad Prompt
+# LearnLens — Prompt Engineering Challenge: Good Prompt, Bad Prompt
 
-Welcome to the **LearnLens — a student tools platform** prompt engineering challenge. As a prompt engineer, you are tasked with identifying why three existing AI prompts are producing poor, inconsistent results and rewriting them using the five-component prompt structure.
+LearnLens is a student tools platform designed to help learners streamline their study workflows, from reviewing biology notes to preparing for technical interviews. This repository contains the AI prompt system powering three core LearnLens features.
 
-## Context
-The application uses AI to:
-- **Task A — Notes Reviewer:** Analyze biology notes for clarity, completeness, and accuracy.
-- **Task B — Placement Summariser:** Summarize technical interview experiences with structured details.
-- **Task C — Error Analyst:** Debug React error messages and suggest fixes.
+Your objective is to identify systemic weaknesses in three "bad" prompts, rewrite them using the industry-standard five-component structure, and demonstrate measurable improvement in output quality and structural reliability.
 
-Currently, the prompts are minimal and perform poorly. Your job is to improve them.
+## The Challenge
+The repository contains:
+1.  **Task A — Notes Reviewer**: Evaluates biology notes for clarity and completeness.
+2.  **Task B — Placement Summariser**: Converts technical interview reports into structured highlights.
+3.  **Task C — Error Analyst**: Diagnoses React errors and suggests fixes.
 
-## The Five-Component Structure
-Your rewritten prompts must include:
-1. **Persona:** Who is the AI? (e.g., "Expert Biology Teacher", "Senior Technical Interviewer")
-2. **Context:** What is the AI doing and why? (e.g., "You are helping students review their notes for an upcoming exam.")
-3. **Task:** What exactly should the AI do? (e.g., "Analyze the provided mitosis notes and give feedback.")
-4. **Constraints/Instructions:** How should it behave? (e.g., "Be encouraging but professional. Do not hallucinate.")
-5. **Output Format:** What should the response look like? (e.g., "Return a JSON object with scores for clarity and accuracy.")
+The three original prompts located in `prompts/originals.js` are failing to produce reliable outputs for our dashboard. You must fix them in `prompts/rewritten.js`.
+
+---
 
 ## Setup Instructions
 
-1. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
+### 1. Prerequisites
+- Node.js (v18 or higher)
+- An LLM API Key. You can get a free one from:
+    - [Groq](https://console.groq.com/keys) (Fastest inference)
+    - [Google AI Studio](https://aistudio.google.com/) (Gemini models)
+    - [OpenRouter](https://openrouter.ai/) (Access to many models)
 
-2. **Configure Environment:**
-   - Copy `.env.example` to `.env`.
-   - Add your `API_KEY`.
-   - (Optional) Configure `LLM_BASE_URL` and `LLM_MODEL`.
+### 2. Installation
+1.  Clone the repository and enter the directory.
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Configure your environment:
+    ```bash
+    cp .env.example .env
+    ```
+4.  Open `.env` and add your `API_KEY`. If you are using Groq or another provider, update `LLM_BASE_URL` (e.g., `https://api.groq.com/openai/v1`) and `LLM_MODEL` (e.g., `llama-3.1-70b-versatile`).
 
-3. **Explore the Existing Prompts:**
-   - Check `prompts/originals.js` to see the "bad" prompts.
+---
 
 ## How to Complete the Challenge
 
-### 1. Initial Analysis
-Run the "bad" version of each task using the CLI runner and observe the output.
+### Step 1: Baseline Analysis
+Run the "bad" version of each task to see how the current prompts perform.
 ```bash
-# Task A
 node runner --task=a --version=bad --temperature=0.7
-
-# Task B
 node runner --task=b --version=bad --temperature=0.7
-
-# Task C
 node runner --task=c --version=bad --temperature=0.7
 ```
-Document why these prompts are poor in `PROMPT_COMPARISON.md`.
+Check `PROMPT_COMPARISON.md` and document the missing components in the original prompts.
 
-### 2. Rewrite the Prompts
-Open `prompts/rewritten.js` and implement the improved versions of all three prompts using the five-component structure. Make sure you use **System Messages** for persona and instructions.
+### Step 2: Implementation
+Open `prompts/rewritten.js` and implement all three prompts. Each prompt **must** use the five-component structure:
+1.  **Persona**: Define the AI's professional identity.
+2.  **Context**: Provide specific background using delimiters where relevant.
+3.  **Task**: Clearly state the objective.
+4.  **Format Constraints**: Define the exact structural output (e.g., JSON shape).
+5.  **Behavioral Constraints**: Set boundaries for the AI (e.g., "Do not hallucinate facts").
 
-### 3. Test and Compare
-Run your "good" versions and compare them against the originals.
+### Step 3: Performance Comparison
+Run your "good" version and compare the output.
 ```bash
-# Task A
 node runner --task=a --version=good --temperature=0.0
-
-# Task B
 node runner --task=b --version=good --temperature=0.0
-
-# Task C
 node runner --task=c --version=good --temperature=0.0
 ```
+Note: Use `temperature=0.0` for your improved prompts to ensure deterministic, reliable results.
 
-### 4. Document Your Results
-Update `PROMPT_COMPARISON.md` with your findings, comparing the raw responses, structural completeness, and reliability.
+### Step 4: Submission
+Record your findings, raw outputs, and improvement summaries in `PROMPT_COMPARISON.md`.
 
-## API Endpoints (Optional for testing)
-If you want to run the full server:
+---
+
+## Running the API (Optional)
+While the challenge primarily uses the CLI runner, you can also test the prompts through the LearnLens backend:
 ```bash
 npm start
 ```
-The server will be available at `http://localhost:3001`.
-- `GET /api/notes/:id/review?version=bad|good&temperature=0.0`
-- `GET /api/interviews/:id/summary?version=bad|good&temperature=0.0`
-- `POST /api/errors/analyse?version=bad|good&temperature=0.0` (Expects `{ "error_message": "..." }`)
+The server runs on `http://localhost:3001` with the following endpoints:
+- `GET /api/notes/:id/review?version=bad|good`
+- `GET /api/interviews/:id/summary?version=bad|good`
+- `POST /api/errors/analyse?version=bad|good`
