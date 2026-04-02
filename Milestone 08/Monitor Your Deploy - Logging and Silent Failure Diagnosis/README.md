@@ -1,7 +1,7 @@
 # StockAPI — Starter Repository
 
 ## Challenge: Monitor Your Deploy (8.14)
-## Deployed URL: https://stockapi-[hash]
+## Deployed URL: https://stockapi-[hash].onrender.com
 
 ## The Problem
 `GET /api/products` returns `200` with an empty array.
